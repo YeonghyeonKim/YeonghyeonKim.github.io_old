@@ -3,7 +3,7 @@ main:
   - title: "about"
     url: /about/
   - title: "포스트"
-    url: /posts/
+    url: /year-archive/
   # - title: "Sample Posts"
   #   url: /year-archive/
   # - title: "Sample Collections"
