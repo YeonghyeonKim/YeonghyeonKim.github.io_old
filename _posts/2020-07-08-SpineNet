@@ -1,0 +1,36 @@
+---
+title: "SpineNet: Learning Scale-Permuted Backbone for Recognition and Localization"
+date: 2020-07-08 23:48:00
+categories: 
+- Object Detection
+
+tags:
+- Object Detection
+---
+<img width=640 height=480 src="https://user-images.githubusercontent.com/13957997/87061505-cb263700-c246-11ea-9fd6-3a89e9536c6b.jpg">
+
+## 자체요약
+SpineNet은 Google Research의 Brain Team이 연구한 네트워크.  
+Scale-decreased model이 좋은 backbone 구조인지에 대한 질문에서 시작.  
+SpineNet은 Neural Network Search를 통해 물체 검출에서 학습된 scale-permuted intermediate features와 cross-scale connections으로 이뤄진 backbone이다.  
+
+## 요약
+CNN (Convolutional Neural Networks)는 입력 이미지를 일련의 낮은 해상도를 갖는 중간 특징으로 인코드 한다. 이런 구조는 분류(Classification) 태스크에는 적합하나, 물체 검출과 같은 인식(Recognition)과 위치(Localization) 과정이 동시에 일어나는 경우에는 적합하지 않다. Encoder-Decoder 구조는 이런 문제를 해결하기 위해 제안되었는데, 그 구조는 분류 태스크를 위해 디자인된 backbone 모델에 decoder network를 적용하게 된다. 이 논문에서는 크기를 감소(scale-decreased)시키는 backbone 구조로 인해 강인한 다양한 스케일의 Feature를 생성하는데 비효율적임을 주장하며, SpineNet을 제안한다. SpineNet은 Neural Architecture Search를 통해 물체 검출 태스크에 대해 학습된 1) 크기가 scale-permuted intermediate features 과 2) cross-scale connections로 이뤄진 backbone이다.  
+
+## 핵심 개념
+<img src="https://user-images.githubusercontent.com/13957997/87058830-877dfe00-c243-11ea-9105-99805457f7a9.png">  
+
+Scale-decrease model은 일반적인 CNN로서 왼쪽과 같으며, Scale-permuted model은 오른쪽 네트워크와 같다.  
+
+기존 Scale-decreased model과의 차이점은 크게 2가지가 있다.  
+1) Scale-decreased model은 Network가 깊어질수록 (그림상 위로 향할수록) resolution은 감소하고, dimension(channel)은 증가하는데 반해,  
+Scale-permuted model은 Network가 resolution과 dimension이 깊이에 상관없이 배치되어있다.
+
+
+scale-decrease model은 down-sampling을 할 때 공간정보 (spatial information)을 없앰.  
+
+
+## Reference
+[1] https://arxiv.org/abs/1912.05027  
+https://ai.googleblog.com/2020/06/spinenet-novel-architecture-for-object.html  
+https://aidevelopmenthub.com/d-paper-explained-spinenet-learning-scale-permuted-backbone-for-recognition-and-localization-full-video-analysis-artificial/
